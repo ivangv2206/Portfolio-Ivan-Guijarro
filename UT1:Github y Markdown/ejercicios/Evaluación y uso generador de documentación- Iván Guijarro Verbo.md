@@ -39,7 +39,7 @@ En este apartado realizaré la documentación de un código para después genera
 El código que he documentado es el siguiente:
 
 ![](Aspose.Words.a3410fdf-deca-446a-b73c-6e433d81e7bd.001.png)![](Aspose.Words.a3410fdf-deca-446a-b73c-6e433d81e7bd.002.png)![](Aspose.Words.a3410fdf-deca-446a-b73c-6e433d81e7bd.003.png)
-\*\
+
 
 # ![](Aspose.Words.a3410fdf-deca-446a-b73c-6e433d81e7bd.004.png)
 A continuación se ha utilizado la herramienta correspondiente para poder generar dicha documentación en distintos formatos los cuales están dentro de una carpeta de nuestro [PORTFOLIO junto con el código documentado](<https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/tree/main/UT1%3AGithub%20y%20Markdown/ejercicios/documentacion>)
