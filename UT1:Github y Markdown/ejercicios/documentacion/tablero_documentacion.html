@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Documentación de tablero.py</title><style>:root{--bg:#fff;--fg:#1f2328;--mut:#59636e;--bd:#d1d9e0;--cb:#f6f8fa;--ac:#0b5cad}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1117;--fg:#e6edf3;--mut:#9198a1;--bd:#3d444d;--cb:#161b22;--ac:#58a6ff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-size:2rem;margin:0 0 .25rem}.sub{color:var(--mut);margin:0 0 2rem}
+h2{font-size:1.35rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);color:var(--ac)}
+code{background:var(--cb);border:1px solid var(--bd);border-radius:4px;padding:.1em .35em;font:.9em ui-monospace,Consolas,monospace}
+pre{background:var(--cb);border:1px solid var(--bd);border-radius:8px;padding:1rem;overflow-x:auto}
+pre code{background:none;border:0;padding:0;font-size:.88rem}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid var(--bd);padding:.5rem .75rem;text-align:left;vertical-align:top}th{background:var(--cb)}
+li{margin:.3rem 0}</style></head><body><main><h1>Documentación de tablero.py</h1><p class="sub">Mini-juego «Hundir la flota» (versión de 1 barco de tamaño 1)</p>
+<h2>1. Descripción general</h2>
+<p><code>tablero.py</code> es un juego de consola en Python inspirado en «Hundir la flota». El programa esconde <strong>un único barco de tamaño 1</strong> en un tablero de <strong>10 filas x 15 columnas</strong> y el jugador debe adivinar su posición introduciendo coordenadas (por ejemplo <code>A5</code> o <code>J15</code>). El juego termina cuando el jugador acierta o cuando se rinde con <code>Ctrl+C</code>.</p>
+<h2>2. Requisitos y ejecución</h2>
+<ul><li>Python 3.6 o superior (usa f-strings).</li><li>Solo utiliza la biblioteca estándar (<code>random</code>); no requiere instalar nada.</li></ul>
+<pre><code>python tablero.py</code></pre>
+<h2>3. Constantes y variables globales</h2>
+<div class="tw"><table><thead><tr><th>Nombre</th><th>Tipo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>FILAS</code></td><td>int</td><td>Número de filas del tablero (10).</td></tr><tr><td><code>COLS</code></td><td>int</td><td>Número de columnas del tablero (15).</td></tr><tr><td><code>LETRAS</code></td><td>str</td><td>Letras <code>&quot;ABCDEFGHIJ&quot;</code> que identifican las filas; el índice de cada letra es el índice de fila.</td></tr><tr><td><code>oculto</code></td><td>list[list[str]]</td><td>Tablero secreto que contiene la posición real del barco.</td></tr><tr><td><code>jugador</code></td><td>list[list[str]]</td><td>Tablero visible que se va actualizando con los disparos del jugador.</td></tr><tr><td><code>f</code>, <code>c</code></td><td>int</td><td>Fila y columna (base 0) elegidas al azar para el barco.</td></tr></tbody></table></div>
+<h2>4. Símbolos del tablero</h2>
+<div class="tw"><table><thead><tr><th>Símbolo</th><th>Significado</th><th>Aparece en</th></tr></thead><tbody><tr><td><code>~</code></td><td>Casilla sin descubrir (agua desconocida).</td><td><code>oculto</code> y <code>jugador</code></td></tr><tr><td><code>B</code></td><td>Barco (solo visible al rendirse).</td><td><code>oculto</code></td></tr><tr><td><code>X</code></td><td>Disparo acertado.</td><td><code>jugador</code></td></tr><tr><td><code>O</code></td><td>Disparo fallado (agua). Es la letra O, no el cero.</td><td><code>jugador</code></td></tr></tbody></table></div>
+<h2>5. Inicialización</h2>
+<p>Ambos tableros se crean con una comprensión de listas, de modo que cada fila es una lista independiente (evitando el error típico de duplicar la misma referencia):</p>
+<pre><code>oculto = [[&quot;~&quot;] * COLS for _ in range(FILAS)]
+jugador = [[&quot;~&quot;] * COLS for _ in range(FILAS)]</code></pre>
+<p>A continuación se sortea la posición del barco con <code>random.randint</code> y se marca con <code>&quot;B&quot;</code> en <code>oculto</code>.</p>
+<h2>6. Funciones</h2>
+<p><strong><code>mostrar(tablero)</code></strong> - Imprime un tablero por consola con la cabecera de columnas (1-15) y la letra de cada fila.</p>
+<div class="tw"><table><thead><tr><th>Parámetro</th><th>Tipo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>tablero</code></td><td>list[list[str]]</td><td>Matriz de FILAS x COLS con los símbolos a imprimir.</td></tr></tbody></table></div>
+<p>No devuelve nada (<code>None</code>); solo escribe en la salida estándar.</p>
+<pre><code>def mostrar(tablero):
+    &quot;&quot;&quot;Muestra el tablero con coordenadas.&quot;&quot;&quot;
+    print(&quot;   &quot; + &quot; &quot;.join(f&quot;{i:2}&quot; for i in range(1, COLS + 1)))
+    for i, fila in enumerate(tablero):
+        print(f&quot;{LETRAS[i]}  &quot; + &quot; &quot;.join(fila))</code></pre>
+<h2>7. Flujo del programa</h2>
+<ul><li>Se muestra el mensaje de bienvenida y las instrucciones.</li><li>Bucle <code>while True</code>: se imprime el tablero del jugador y se pide una casilla; la entrada se limpia con <code>strip()</code> y <code>upper()</code>, por lo que <code>a5</code> y <code>A5</code> son equivalentes.</li><li>Se valida el formato y el rango (ver sección 8).</li><li>Si la casilla ya contiene <code>X</code> u <code>O</code>, se avisa de que ya se disparó ahí y no se penaliza.</li><li>Si coincide con el barco, se marca <code>X</code>, se muestra el tablero y se termina el juego con <code>break</code> (victoria).</li><li>Si no, se marca <code>O</code> y se muestra «Agua. Sigue intentándolo.».</li><li>Si el usuario pulsa <code>Ctrl+C</code>, se captura <code>KeyboardInterrupt</code>, se informa de la rendición y se imprime el tablero <code>oculto</code> para revelar el barco.</li></ul>
+<h2>8. Validación de la entrada</h2>
+<p>La entrada se comprueba en dos pasos: primero el formato (letra + número) y después el rango de la columna.</p>
+<pre><code>if len(coord) &lt; 2 or coord[0] not in LETRAS or not coord[1:].isdigit():
+    print(&quot;Formato incorrecto o fila inválida. Ejemplo: A5&quot;)
+    continue
+
+fila_idx = LETRAS.index(coord[0])
+col_idx = int(coord[1:]) - 1
+
+if not (0 &lt;= col_idx &lt; COLS):
+    print(&quot;Esa columna está fuera del tablero.&quot;)
+    continue</code></pre>
+<div class="tw"><table><thead><tr><th>Entrada</th><th>Resultado</th></tr></thead><tbody><tr><td><code>A5</code>, <code>a5</code>, <code>J15</code></td><td>Válida.</td></tr><tr><td><code>A</code>, <code>5</code>, `` (vacío)</td><td>«Formato incorrecto o fila inválida».</td></tr><tr><td><code>K3</code>, <code>Z1</code></td><td>Fila inválida (solo A-J).</td></tr><tr><td><code>A0</code>, <code>A16</code>, <code>C20</code></td><td>«Esa columna está fuera del tablero».</td></tr><tr><td><code>A5B</code>, <code>A-1</code></td><td>«Formato incorrecto».</td></tr></tbody></table></div>
+<h2>9. Ejemplo de sesión</h2>
+<pre><code>Introduce la casilla: a5
+Agua. Sigue intentándolo.
+
+Introduce la casilla: K3
+Formato incorrecto o fila inválida. Ejemplo: A5
+
+Introduce la casilla: C20
+Esa columna está fuera del tablero.
+
+Introduce la casilla: A5
+Ya has disparado aquí antes. Prueba otra.</code></pre>
+<h2>10. Observaciones y posibles mejoras</h2>
+<ul><li><strong>Alineación de la cabecera:</strong> los números de columna se imprimen con ancho 2 (<code>{i:2}</code>), mientras que las celdas ocupan 1 carácter, por lo que la cabecera queda desalineada respecto a las filas. Se soluciona usando el mismo ancho en ambos (por ejemplo, <code>&quot; &quot;.join(f&quot;{c:&gt;2}&quot; for c in fila)</code>).</li><li><strong>Entrada con dígitos Unicode:</strong> <code>isdigit()</code> acepta caracteres como <code>²</code>, para los que <code>int()</code> lanza <code>ValueError</code> y el programa se cierra. Usar <code>isdecimal()</code> o capturar <code>ValueError</code> lo evita.</li><li><strong>Fin de entrada (<code>Ctrl+D</code> / <code>Ctrl+Z</code>):</strong> provoca <code>EOFError</code>, que no está capturada.</li><li><strong>Sin límite de intentos ni contador:</strong> se podría añadir un máximo de disparos o mostrar cuántos ha hecho el jugador.</li><li><strong>Ampliaciones:</strong> varios barcos, barcos de distinto tamaño o un modo de dos jugadores.</li><li><strong>Estructura:</strong> convertir el código en funciones (<code>crear_tablero</code>, <code>pedir_coordenada</code>, <code>jugar</code>) y usar <code>if __name__ == &quot;__main__&quot;:</code> facilitaría las pruebas y su reutilización.</li></ul>
+</main></body></html>
