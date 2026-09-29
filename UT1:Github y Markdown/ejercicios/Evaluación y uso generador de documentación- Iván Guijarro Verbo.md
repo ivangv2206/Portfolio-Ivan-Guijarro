@@ -42,7 +42,7 @@ El código que he documentado es el siguiente:
 \*\
 
 # ![](Aspose.Words.a3410fdf-deca-446a-b73c-6e433d81e7bd.004.png)
-A continuación se ha utilizado la herramienta correspondiente para poder generar dicha documentación en distintos formatos los cuales están dentro de una carpeta de nuestro [PORTFOLIO](<https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/tree/main/UT1%3AGithub%20y%20Markdown/ejercicios/documentacion>)
+A continuación se ha utilizado la herramienta correspondiente para poder generar dicha documentación en distintos formatos los cuales están dentro de una carpeta de nuestro [PORTFOLIO junto con el código documentado](<https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/tree/main/UT1%3AGithub%20y%20Markdown/ejercicios/documentacion>)
 # <a name="__refheading___toc4_969887519"></a>**Reflexión**
 La aplicación de estándares de documentación mediante Docstrings (PEP 257) en el proyecto del juego Hundir la Flota ha permitido transformar un script sencillo en un código profesional, mantenible y autocontenido.
 
