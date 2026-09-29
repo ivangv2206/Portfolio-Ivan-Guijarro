@@ -1,5 +1,6 @@
 ﻿
-
+[Enlace al archivo .gitignore](https://github.com/ivangv2206/prueba/blob/main/.gitignore)
+[Enlace al archivo SECURITY.md](https://github.com/ivangv2206/prueba/blob/main/SECURITY.md)
 
 **PRUEBAS DE ACCESIBILIDAD Y ROLES**
 
