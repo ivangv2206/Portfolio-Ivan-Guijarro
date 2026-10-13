@@ -14,9 +14,9 @@ Este es el portfolio de Iván Guijarro Verbo para la asignatura de despliegue de
 * [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT3-Apache/ejercicios_ut3.md)
 
 # UT4: Tomcat
-* [Diario](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT1%3AGithub%20y%20Markdown/diario_ut4.md)
-* [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT1%3AGithub%20y%20Markdown/ejercicios_ut4.md)
+* [Diario](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT4-Tomcat/diario_ut4.md)
+* [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT4-Tomcat/ejercicios_ut4.md)
 
 # UT5: Filezilla
-* [Diario](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT1%3AGithub%20y%20Markdown/diario_ut5.md)
-* [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT1%3AGithub%20y%20Markdown/ejercicios_ut5.md)
+* [Diario](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT5-Filezilla/diario_ut5.md)
+* [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT5-Filezilla/ejercicios_ut5.md)
