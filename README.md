@@ -10,8 +10,8 @@ Este es el portfolio de Iván Guijarro Verbo para la asignatura de despliegue de
 * [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT2%3A%20Introducci%C3%B3n%20a%20las%20aplicaciones%20web/ejercicios_ut2.md)
 
 # UT3: Apache
-* [Diario](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT1%3AGithub%20y%20Markdown/diario_ut3.md)
-* [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT1%3AGithub%20y%20Markdown/ejercicios.md)
+* [Diario](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT3-Apache/diario_ut3.md)
+* [Ejercicios](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT3-Apache/ejercicios_ut3.md)
 
 # UT4: Tomcat
 * [Diario](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT1%3AGithub%20y%20Markdown/diario_ut4.md)
