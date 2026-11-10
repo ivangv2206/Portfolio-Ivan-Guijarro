@@ -16,7 +16,12 @@ En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache To
   * Host Manager: Sirve para administrar los hosts virtuales, añade o elimina nuevos dominios al servidor sin modificar manualmente los archivos de configuración en disco y configurar cómo responde Tomcat ante distintas peticiones de dominio.
     Se encuentra dentro dentro de la estructura de directorios del servidor en la carpeta webapss/host-manager/ y en la URL de acceso web poniendo la dirección http://localhost:8080/host-manager.
     
-* Estructura básica de directorios (bin, conf, webapps, lib, logs)
+* Estructura básica de directorios (bin, conf, webapps, lib, logs):
+  | Left columns  | Right columns |
+| ------------- |:-------------:|
+| left foo      | right foo     |
+| left bar      | right bar     |
+| left baz      | right baz     |
 * Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones.
 
 **BIBLIOGRAFÍA**
