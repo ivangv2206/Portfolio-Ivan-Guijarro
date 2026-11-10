@@ -27,13 +27,13 @@ En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache To
 | logs | Almacena los archivos de registro (logs) del sistema y de las aplicaciones (por ejemplo, catalina.out, localhost.log, access.log). Son fundamentales para depurar errores. |
 
 
-* Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones.
+* Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones: Apache Tomcat es un servidor y contenedor que ejecuta aplicaciones web en Java (como Servlets y JSP), procesando peticiones dinámicas y gestionando sesiones. Su flujo interno inicia cuando el Connector recibe la petición HTTP, el Engine (Catalina) la procesa, el Host identifica el dominio, y el Context la dirige al servlet específico para generar la respuesta. En el sistema, se instala como una carpeta independiente (ej. /opt/tomcat/ en Linux o C:\Tomcat\ en Windows), destacando las subcarpetas bin/ para los scripts de arranque, conf/ para archivos de configuración global y webapps/ donde se alojan las aplicaciones desplegadas.
 
 **BIBLIOGRAFÍA**
 * [Catalina](https://es.wikipedia.org/wiki/Tomcat#Tomcat_Catalina)
 * [Coyote](https://www.hostgator.mx/blog/apache-tomcat-que-es-para-que-sirve-y-como-usarlo-en-la-practica/)
 * [Jasper](https://tomcat.apache.org/tomcat-9.0-doc/jasper-howto.html)
 * [Manager y Host Manager](https://codigoelectronica.com/blog/administrador-de-apache-tomcat)
-* [Estructura básica de directorios]()
-* [Flujo interno de funcionamiento]()
+* [Estructura básica de directorios](https://www.codigoelectronica.com/blog/carpetas-y-archivos-de-apache-tomcat)
+* [Flujo interno de funcionamiento](https://tuxcare.com/es/blog/what-is-apache-tomcat/)
 
