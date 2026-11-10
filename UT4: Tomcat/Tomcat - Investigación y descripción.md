@@ -17,11 +17,13 @@ En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache To
     Se encuentra dentro dentro de la estructura de directorios del servidor en la carpeta webapss/host-manager/ y en la URL de acceso web poniendo la dirección http://localhost:8080/host-manager.
     
 * Estructura básica de directorios (bin, conf, webapps, lib, logs):
-| Left columns  | Right columns |
-| ------------- |:-------------:|
-| left foo      | right foo     |
-| left bar      | right bar     |
-| left baz      | right baz     |
+| Directorio | Para qué sirve |
+|---|---|
+| **bin** | Contiene los scripts y ejecutables para arrancar (startup.sh / startup.bat) y detener (shutdown.sh / shutdown.bat) el servidor, además de herramientas por lotes. |
+| **conf** | Almacena los archivos de configuración global del servidor. El más importante es server.xml (estructura de puertos, conectores y hosts) y web.xml (valores por defecto para las aplicaciones). |
+| **webapps** | Es el directorio donde se colocan las aplicaciones web desplegadas. Aquí se guardan las carpetas de cada proyecto o los archivos empaquetados en formato .war que Tomcat despliega automáticamente. |
+| **lib** | Contiene las bibliotecas de archivos .jar compartidos que utilizan tanto el propio motor de Tomcat como las aplicaciones desplegadas (drivers JDBC, utilidades, etc.). |
+| **logs** | Almacena los archivos de registro (logs) del sistema y de las aplicaciones (por ejemplo, catalina.out, localhost.log, access.log). Son fundamentales para depurar errores. |
 
 
 * Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones.
