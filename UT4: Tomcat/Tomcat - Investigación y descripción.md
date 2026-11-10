@@ -11,9 +11,11 @@ En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache To
   
 * Tomcat Manager y Host Manager: Son dos aplicaciones web administrativas que se utilizan para gestionar el servidor de forma remota o mediante interfaz visual.
   * Manager: Se encarga de desplegar y eliminar archivos .war y hacer deploy o undeploy de aplicaciones sin reiniciar Tomcat, inicia, detiene o recarga aplicaciones específicas, ve el uso de memoria de la JVM, hilos activos y sesiones de usuario abiertas y permite gestionar comandos vía script.
-Se encuentra dentro de la estructura de directorios del servidor en la carpeta webapps/manager/ y en la URL de acceso web poniendo la dirección http://localhost:8080/manager
-  * Host Manager: 
-
+    Se encuentra dentro de la estructura de directorios del servidor en la carpeta webapps/manager/ y en la URL de acceso web poniendo la dirección http://localhost:8080/manager
+    
+  * Host Manager: Sirve para administrar los hosts virtuales, añade o elimina nuevos dominios al servidor sin modificar manualmente los archivos de configuración en disco y configurar cómo responde Tomcat ante distintas peticiones de dominio.
+    Se encuentra dentro dentro de la estructura de directorios del servidor en la carpeta webapss/host-manager/ y en la URL de acceso web poniendo la dirección http://localhost:8080/host-manager.
+    
 * Estructura básica de directorios (bin, conf, webapps, lib, logs)
 * Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones.
 
