@@ -10,9 +10,9 @@ En la arquitectura de Tomcat se encuentra en la capa de conectores, justo en la 
 En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache Tomcat junto con Catalina y Coyote; mientras que en el sistema de archivos, las librerías de Jasper (jasper.jar, jasper-el.jar, etc.) están en la carpeta /lib del directorio raíz de Tomcat.
   
 * Tomcat Manager y Host Manager: Son dos aplicaciones web administrativas que se utilizan para gestionar el servidor de forma remota o mediante interfaz visual.
-  #Manager:
-  * a
-  * 
+  * Manager: Se encarga de desplegar y eliminar archivos .war y hacer deploy o undeploy de aplicaciones sin reiniciar Tomcat, inicia, detiene o recarga aplicaciones específicas, ve el uso de memoria de la JVM, hilos activos y sesiones de usuario abiertas y permite gestionar comandos vía script.
+Se encuentra dentro de la estructura de directorios del servidor en la carpeta webapps/manager/ y en la URL de acceso web poniendo la dirección http://localhost:8080/manager
+  * Host Manager: 
 
 * Estructura básica de directorios (bin, conf, webapps, lib, logs)
 * Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones.
@@ -21,7 +21,7 @@ En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache To
 * [Catalina](https://es.wikipedia.org/wiki/Tomcat#Tomcat_Catalina)
 * [Coyote](https://www.hostgator.mx/blog/apache-tomcat-que-es-para-que-sirve-y-como-usarlo-en-la-practica/)
 * [Jasper](https://tomcat.apache.org/tomcat-9.0-doc/jasper-howto.html)
-* [Manager y Host Manager]()
+* [Manager y Host Manager](https://codigoelectronica.com/blog/administrador-de-apache-tomcat)
 * [Estructura básica de directorios]()
 * [Flujo interno de funcionamiento]()
 
