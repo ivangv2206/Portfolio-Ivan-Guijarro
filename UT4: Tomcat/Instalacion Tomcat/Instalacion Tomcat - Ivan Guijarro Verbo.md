@@ -43,7 +43,7 @@ Para gestionar la aplicación como un servicio nativo de Ubuntu, crearemos un ar
 
 sudo nano /etc/systemd/system/tomcat.service
 
-![](Aspose.Words.8ffc2a81-0c43-4afc-92a3-08bc249792cf.001.png)Pondremos el siguiente contenido:
+![](Aspose.Words.8ffc2a81-0c43-4afc-92a3-08bc249792cf.001.png)
 
 # **6. Iniciar y habilitar el servidor**
 Recargaremos la configuración del sistema para que detecte el nuevo servicio, lo arrancaremos y configuraremos para que se inicie automáticamente cada vez que se encienda el servidor. Esto lo haremos con los siguientes comandos:
@@ -59,4 +59,4 @@ Verificaremos que esté corriendo sin errores con el comando:
 sudo systemctl status tomcat 
 # ![](Aspose.Words.8ffc2a81-0c43-4afc-92a3-08bc249792cf.002.png)
 # **7. Comprobación final**
-Abriremos el navegador y pondremos la dirección IP de nuestra máquina seguida del ![](Aspose.Words.8ffc2a81-0c43-4afc-92a3-08bc249792cf.003.png)puerto predeterminado de Tomcat (8080)
+Abriremos el navegador y pondremos la dirección IP de nuestra máquina seguida del puerto predeterminado de Tomcat (8080)![](Aspose.Words.8ffc2a81-0c43-4afc-92a3-08bc249792cf.003.png)
