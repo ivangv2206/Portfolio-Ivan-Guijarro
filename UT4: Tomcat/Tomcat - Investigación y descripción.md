@@ -9,7 +9,10 @@ En la arquitectura de Tomcat se encuentra en la capa de conectores, justo en la 
 * **Jasper:** Es el motor de JSP _(JavaServer Pages engine)_ integrado dentro del servidor Apache Tomcat. Se encarga de leer los archivos con código JSP y los compila convirtiéndolos en servlets de Java ejecutables, detecta cambios en las páginas JSP y puede recompilarlas en segundo plano sin interrumpir las peticiones del servidor y administra el pooling (reutilización) de etiquetas personalizadas para optimizar el rendimiento.
 En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache Tomcat junto con Catalina y Coyote; mientras que en el sistema de archivos, las librerías de Jasper (jasper.jar, jasper-el.jar, etc.) están en la carpeta /lib del directorio raíz de Tomcat.
   
-* Manager y Host Manager
+* Tomcat Manager y Host Manager: Son dos aplicaciones web administrativas que se utilizan para gestionar el servidor de forma remota o mediante interfaz visual.
+  #Manager:
+  * a
+  * 
 
 * Estructura básica de directorios (bin, conf, webapps, lib, logs)
 * Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones.
