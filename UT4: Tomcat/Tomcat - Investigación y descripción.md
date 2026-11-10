@@ -17,11 +17,13 @@ En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache To
     Se encuentra dentro dentro de la estructura de directorios del servidor en la carpeta webapss/host-manager/ y en la URL de acceso web poniendo la dirección http://localhost:8080/host-manager.
     
 * Estructura básica de directorios (bin, conf, webapps, lib, logs):
-  | Left columns  | Right columns |
+| Left columns  | Right columns |
 | ------------- |:-------------:|
 | left foo      | right foo     |
 | left bar      | right bar     |
 | left baz      | right baz     |
+
+
 * Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones.
 
 **BIBLIOGRAFÍA**
