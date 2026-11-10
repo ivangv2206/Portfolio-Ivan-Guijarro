@@ -1,16 +1,24 @@
 ﻿# **1. Actualizar el sistema e instalar Java 17 o 21**
 Tomcat 11 no funcionará con versiones antiguas de Java. Instala el kit de desarrollo (JDK) de OpenJDK ejecutando:
 
-sudo apt update 
+```
+sudo apt update
+```
 
-sudo apt install openjdk-21-jdk -y 
+```
+sudo apt install openjdk-21-jdk -y
+```
 
 # **2. Crear un usuario dedicado para Tomcat**
 Por motivos de seguridad, nunca se debe ejecutar el servidor como root Crea un grupo y un usuario del sistema que no tenga permisos de inicio de sesión directo. Esto lo haremos con los siguientes comandos
 
+```
 sudo groupadd tomcat
+```
 
+```
 sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+```
 
 # **3. Descargar y extraer Apache Tomcat 11**
 Nos moveremos al directorio temporal, descargaremos la versión exacta Apache Tomcat 11.0.27 y la extraeremos en la ruta /opt/tomcat. Esto los haremos con los siguientes comandos: 
