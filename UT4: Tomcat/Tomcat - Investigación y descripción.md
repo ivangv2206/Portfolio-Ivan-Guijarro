@@ -29,6 +29,8 @@ En la arquitectura de Tomcat forma parte del núcleo del contenedor de Apache To
 
 * Flujo interno de funcionamiento: recepción de peticiones, contenedores, despliegue de aplicaciones: Apache Tomcat es un servidor y contenedor que ejecuta aplicaciones web en Java (como Servlets y JSP), procesando peticiones dinámicas y gestionando sesiones. Su flujo interno inicia cuando el Connector recibe la petición HTTP, el Engine (Catalina) la procesa, el Host identifica el dominio, y el Context la dirige al servlet específico para generar la respuesta. En el sistema, se instala como una carpeta independiente (ej. /opt/tomcat/ en Linux o C:\Tomcat\ en Windows), destacando las subcarpetas bin/ para los scripts de arranque, conf/ para archivos de configuración global y webapps/ donde se alojan las aplicaciones desplegadas.
 
+[Instalación de Tomcat](https://github.com/ivangv2206/Portfolio-Ivan-Guijarro/blob/main/UT4%3A%20Tomcat/Instalacion%20Tomcat/Instalacion%20Tomcat%20-%20Ivan%20Guijarro%20Verbo.md)
+
 **BIBLIOGRAFÍA**
 * [Catalina](https://es.wikipedia.org/wiki/Tomcat#Tomcat_Catalina)
 * [Coyote](https://www.hostgator.mx/blog/apache-tomcat-que-es-para-que-sirve-y-como-usarlo-en-la-practica/)
