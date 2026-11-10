@@ -15,7 +15,6 @@ Por motivos de seguridad, nunca se debe ejecutar el servidor como root Crea un g
 ```
 sudo groupadd tomcat
 ```
-
 ```
 sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 ```
@@ -23,8 +22,10 @@ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 # **3. Descargar y extraer Apache Tomcat 11**
 Nos moveremos al directorio temporal, descargaremos la versión exacta Apache Tomcat 11.0.27 y la extraeremos en la ruta /opt/tomcat. Esto los haremos con los siguientes comandos: 
 
+```
 cd /tmp
-
+```
+```
 wget [https://apache.org](https://apache.org/)
 
 sudo mkdir -p /opt/tomcat
