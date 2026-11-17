@@ -39,13 +39,13 @@ Nos aseguraremos de que Tomcat sigue encendido (sudo systemctl status tomcat) y 
 Entraremos en la URL sin poner el puerto 8080
 
 <img width="1297" height="290" alt="imagen" src="https://github.com/user-attachments/assets/d1921e0e-46ae-4acc-aeb2-6a611e5c7a27" />
-_Veremos que se cargará nuestra página JSP "¡Hola Mundo desde Apache Tomcat!", pero servida directamente a través del puerto 80 de Apache HTTP Server_
+Veremos que se cargará nuestra página JSP "¡Hola Mundo desde Apache Tomcat!", pero servida directamente a través del puerto 80 de Apache HTTP Server
 
 3. Desde la terminal
 Ejecutaremos curl -I http://localhost/hola-mundo/ para inspeccionar las cabeceras HTTP
 
 <img width="934" height="346" alt="imagen" src="https://github.com/user-attachments/assets/6f0fde94-1940-4a07-907a-93e10662d603" />
-_Veremos un código de estado HTTP/1.1 200 OK junto con la cabecera Server: Apache/2.4.x (Ubuntu), demostrando que Apache actúa como intermediario delante de Tomcat._
+Veremos un código de estado HTTP/1.1 200 OK junto con la cabecera Server: Apache/2.4.x (Ubuntu), demostrando que Apache actúa como intermediario delante de Tomcat.
 
 # **4. Resumen técnico para documentar en tu entrega**
 * Arquitectura implementada: Proxy Inverso (Reverse Proxy) HTTP entre Apache HTTP Server (puerto 80) y Apache Tomcat (puerto 8080).
