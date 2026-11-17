@@ -39,13 +39,13 @@ Nos aseguraremos de que Tomcat sigue encendido (sudo systemctl status tomcat) y 
 Entraremos en la URL sin poner el puerto 8080
 
 <img width="1297" height="290" alt="imagen" src="https://github.com/user-attachments/assets/d1921e0e-46ae-4acc-aeb2-6a611e5c7a27" />
-*Veremos que se cargará nuestra página JSP "¡Hola Mundo desde Apache Tomcat!", pero servida directamente a través del puerto 80 de Apache HTTP Server*
+_Veremos que se cargará nuestra página JSP "¡Hola Mundo desde Apache Tomcat!", pero servida directamente a través del puerto 80 de Apache HTTP Server_
 
 3. Desde la terminal
 Ejecutaremos curl -I http://localhost/hola-mundo/ para inspeccionar las cabeceras HTTP
 
 <img width="934" height="346" alt="imagen" src="https://github.com/user-attachments/assets/6f0fde94-1940-4a07-907a-93e10662d603" />
-*Veremos un código de estado HTTP/1.1 200 OK junto con la cabecera Server: Apache/2.4.x (Ubuntu), demostrando que Apache actúa como intermediario delante de Tomcat.*
+_Veremos un código de estado HTTP/1.1 200 OK junto con la cabecera Server: Apache/2.4.x (Ubuntu), demostrando que Apache actúa como intermediario delante de Tomcat._
 
 # **4. Resumen técnico para documentar en tu entrega**
 * Arquitectura implementada: Proxy Inverso (Reverse Proxy) HTTP entre Apache HTTP Server (puerto 80) y Apache Tomcat (puerto 8080).
@@ -55,7 +55,7 @@ Ejecutaremos curl -I http://localhost/hola-mundo/ para inspeccionar las cabecera
 * Directivas utilizadas en 000-default.conf:
   * ProxyPreserveHost On: Mantiene la cabecera Host original enviada por el cliente al pasarla a Tomcat.
   * ProxyPass /hola-mundo [http://127.0.0.1:8080/hola-mundo](http://127.0.0.1:8080/hola-mundo): Mapea la URL pública de Apache hacia el servidor interno de Tomcat.
-  * ProxyPassReverse /hola-mundo [http://127.0.0.1:8080/hola-mundo](http://127.0.0.1:8080/hola-mundo): Reescribe las cabeceras de redirección (Location) generadas por Tomcat para que el navegador del cliente nunca vea expuesto el puerto interno 8080.**
+  * ProxyPassReverse /hola-mundo [http://127.0.0.1:8080/hola-mundo](http://127.0.0.1:8080/hola-mundo): Reescribe las cabeceras de redirección (Location) generadas por Tomcat para que el navegador del cliente nunca vea expuesto el puerto interno 8080.
 
 
 
