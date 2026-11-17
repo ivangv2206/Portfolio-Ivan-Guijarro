@@ -44,7 +44,7 @@ Ejecutaremos curl -I http://localhost/hola-mundo/ para inspeccionar las cabecera
 <img width="934" height="346" alt="imagen" src="https://github.com/user-attachments/assets/6f0fde94-1940-4a07-907a-93e10662d603" />
 *Veremos un código de estado HTTP/1.1 200 OK junto con la cabecera Server: Apache/2.4.x (Ubuntu), demostrando que Apache actúa como intermediario delante de Tomcat.*
 
-# **4. Resumen técnico para documentar en tu entrega
+# **4. Resumen técnico para documentar en tu entrega**
 * Arquitectura implementada: Proxy Inverso (Reverse Proxy) HTTP entre Apache HTTP Server (puerto 80) y Apache Tomcat (puerto 8080).
 * Módulos activados (a2enmod):
   * proxy: Proporciona la infraestructura básica de proxy en Apache.
