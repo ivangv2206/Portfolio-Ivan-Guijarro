@@ -75,7 +75,7 @@ ss -tlnp | grep -E "8080|8443"
 * Aparecerá una ventana emergente pidiendo Nombre de usuario y contraseña. Introduciremos admin y PasswordSegura2026
 <img width="1857" height="429" alt="image" src="https://github.com/user-attachments/assets/60da1790-9e65-41cf-a8e1-b461abe96461" />
 
-*Una vez que hayamos entrado, veremos que se listan nuestras aplicaciones desplegadas y también veremos la página de hola-mundo)*
+*Una vez que hayamos entrado, veremos que se listan nuestras aplicaciones desplegadas y también veremos la página de hola-mundo*
 <img width="1852" height="856" alt="image" src="https://github.com/user-attachments/assets/b6a6df6c-04a0-452f-b18e-adf0515b57e1" />
 
 # **5. Nota sobre el Security Manager**
