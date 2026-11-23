@@ -68,7 +68,7 @@ ss -tlnp | grep -E "8080|8443"
 * Firefox mostrará una advertencia de seguridad ("Riesgo potencial de seguridad" por ser un certificado autofirmado). Haremos clic en Avanzado... $\rightarrow$ Aceptar el riesgo y continuar.
 
 *Veremos el candado con aviso en la barra de direcciones junto a https://localhost:8443 y la página cargada.*
-[*MINIATURA MINIATURA*]
+<img width="1855" height="450" alt="image" src="https://github.com/user-attachments/assets/401fc0b4-a39d-41b2-9ebe-416dcc01e500" />
 
 2. Prueba de autenticación en el Manager App
 * Entraremos en https://localhost:8443/manager/html
