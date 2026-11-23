@@ -73,10 +73,10 @@ ss -tlnp | grep -E "8080|8443"
 2. Prueba de autenticación en el Manager App
 * Entraremos en https://localhost:8443/manager/html
 * Aparecerá una ventana emergente pidiendo Nombre de usuario y contraseña. Introduciremos admin y PasswordSegura2026
-[*MINIATURA MINIATURA*]
+<img width="1857" height="429" alt="image" src="https://github.com/user-attachments/assets/60da1790-9e65-41cf-a8e1-b461abe96461" />
 
-*Una vez que hayamos entrado, veremos que se listan nuestras aplicaciones desplegadas (En nuestro caso la página de hola-mundo)*
-[*MINIATURA MINIATURA*]
+*Una vez que hayamos entrado, veremos que se listan nuestras aplicaciones desplegadas y también veremos la página de hola-mundo)*
+<img width="1852" height="856" alt="image" src="https://github.com/user-attachments/assets/b6a6df6c-04a0-452f-b18e-adf0515b57e1" />
 
 # **5. Nota sobre el Security Manager**
 * El Java Security Manager limita los permisos a nivel de código Java (acceso a archivos, sockets o propiedades del sistema) mediante el archivo conf/catalina.policy, arrancando Tomcat con ./catalina.sh start -security.
