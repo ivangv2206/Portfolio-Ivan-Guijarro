@@ -66,7 +66,13 @@ ss -tlnp | grep -E "8080|8443"
 1. Prueba de conexión cifrada HTTPS
 * Entraremos en https://localhost:8443/hola-mundo/ (o https://localhost:8443/).
 * Firefox mostrará una advertencia de seguridad ("Riesgo potencial de seguridad" por ser un certificado autofirmado). Haremos clic en Avanzado... $\rightarrow$ Aceptar el riesgo y continuar.
+
 *Veremos el candado con aviso en la barra de direcciones junto a https://localhost:8443 y la página cargada.*
 [*MINIATURA MINIATURA*]
 2. Prueba de autenticación en el Manager App
-* 
+* Entraremos en https://localhost:8443/manager/html
+* Aparecerá una ventana emergente pidiendo Nombre de usuario y contraseña. Introduciremos admin y PasswordSegura2026
+[*MINIATURA MINIATURA*]
+
+*Una vez que hayamos entrado, veremos que se listan nuestras aplicaciones desplegadas (En nuestro caso la página de hola-mundo)*
+[*MINIATURA MINIATURA*]
