@@ -69,6 +69,7 @@ ss -tlnp | grep -E "8080|8443"
 
 *Veremos el candado con aviso en la barra de direcciones junto a https://localhost:8443 y la página cargada.*
 [*MINIATURA MINIATURA*]
+
 2. Prueba de autenticación en el Manager App
 * Entraremos en https://localhost:8443/manager/html
 * Aparecerá una ventana emergente pidiendo Nombre de usuario y contraseña. Introduciremos admin y PasswordSegura2026
