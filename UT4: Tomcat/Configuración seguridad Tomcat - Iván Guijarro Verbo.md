@@ -28,5 +28,45 @@ sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml
 ```
 # **3. Configurar HTTPS con un Keystore y un Conector SSL**
 ## Generar el certificado autofirmado
-
-
+1. Crearemos un almacén de claves PKCS12 dentro de /opt/tomcat/conf/ usando el siguiente comando:
+```
+sudo keytool -genkey -alias tomcat -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore /opt/tomcat/conf/tomcat.p12 -validity 365 -storepass changeit -dname "CN=localhost, OU=Desarrollo, O=Practica, L=Madrid, ST=Madrid, C=ES"
+```
+2. Aseguraremos los permisos del keystore para que Tomcat pueda leerlo con los siguientes comandos:
+```
+sudo chmod 640 /opt/tomcat/conf/tomcat.p12
+sudo chown root:tomcat /opt/tomcat/conf/tomcat.p12 2>/dev/null || sudo chmod 644 /opt/tomcat/conf/tomcat.p12
+```
+## Activar el Conector SSL en server.xml
+1. Abriremos server.xml con el siguiente comando:
+```
+sudo nano /opt/tomcat/conf/server.xml
+```
+2. Buscaremos la sección donde está el conector del puerto 8080 (<Connector ... port="8080"/>) y añadiremos justo debajo el conector HTTPS en el puerto 8443 de la siguiente manera:
+```
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+           maxThreads="150" SSLEnabled="true" scheme="https" secure="true">
+    <SSLHostConfig>
+        <Certificate certificateKeystoreFile="conf/tomcat.p12"
+                     certificateKeystorePassword="changeit"
+                     certificateKeystoreType="PKCS12"
+                     type="RSA" />
+    </SSLHostConfig>
+</Connector>
+```
+3. Reiniciaremos Tomcat para aplicar todos los cambios de seguridad con el siguiente comando:
+```
+sudo systemctl restart tomcat
+```
+4. Comprobaremos que Tomcat está escuchando tanto en el puerto 8080 como en el 8443 ejecutando:
+```
+ss -tlnp | grep -E "8080|8443"
+```
+# **4. Realizar la prueba de acceso autenticado y tomar evidencias**
+1. Prueba de conexión cifrada HTTPS
+* Entraremos en https://localhost:8443/hola-mundo/ (o https://localhost:8443/).
+* Firefox mostrará una advertencia de seguridad ("Riesgo potencial de seguridad" por ser un certificado autofirmado). Haremos clic en Avanzado... $\rightarrow$ Aceptar el riesgo y continuar.
+*Veremos el candado con aviso en la barra de direcciones junto a https://localhost:8443 y la página cargada.*
+[*MINIATURA MINIATURA*]
+2. Prueba de autenticación en el Manager App
+* 
