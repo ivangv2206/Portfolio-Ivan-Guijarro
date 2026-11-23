@@ -78,6 +78,6 @@ ss -tlnp | grep -E "8080|8443"
 *Una vez que hayamos entrado, veremos que se listan nuestras aplicaciones desplegadas (En nuestro caso la página de hola-mundo)*
 [*MINIATURA MINIATURA*]
 
-#**5. Nota sobre el Security Manager**
+# **5. Nota sobre el Security Manager**
 * El Java Security Manager limita los permisos a nivel de código Java (acceso a archivos, sockets o propiedades del sistema) mediante el archivo conf/catalina.policy, arrancando Tomcat con ./catalina.sh start -security.
 * En versiones modernas de Java (Java 17 en adelante, JEP 411) y Tomcat 10.1/11, el Security Manager de Java ha quedado obsoleto (deprecated), por lo que en entornos actuales se prioriza el aislamiento mediante contenedores, permisos del sistema operativo y proxy inverso con TLS/HTTPS como acabas de configurar.
