@@ -38,5 +38,12 @@ Antes de modificar la configuración, guardaremos una copia de seguridad del arc
 * maxConnections="10000" (defecto: 8192 en NIO): Aumenta el límite de conexiones TCP simultáneas abiertas en el conector no bloqueante.
 * connectionTimeout="10000" (defecto: 20000): Reduce de 20 a 10 segundos el tiempo de espera antes de cerrar conexiones inactivas, liberando recursos antes.
 * compression="on": Activa la compresión GZIP en respuestas de texto/HTML/JSON mayores de 1 KB, reduciendo el ancho de banda y el tiempo de transferencia.
-3. Reiniciaremos Tomcat
+3. Reiniciaremos Tomcat para aplicar la configuración
+
+# **3. Segunda prueba de carga (Comparativa "Después")**
+Ejecutaremos el mismo comando del apartado 1 bajos las mismas condiciones para que la comparación sea válida.
+Los resultados que obtendremos serán los siguientes:
+<img width="961" height="554" alt="imagen" src="https://github.com/user-attachments/assets/01a3fb6d-78e4-430c-8b60-951e1d979555" />
+
+
 
