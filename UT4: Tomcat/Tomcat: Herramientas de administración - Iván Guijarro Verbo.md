@@ -28,3 +28,31 @@ Por seguridad, Apache Tomcat bloquea el acceso a estas herramientas hasta que de
 * Parada (Stop): Detiene una aplicación en ejecución sin eliminar sus archivos del servidor. Útil para tareas de mantenimiento mientras se devuelve un error 404 controlado a los usuarios.
 * Recarga (Reload): Reinicia exclusivamente el contexto de una aplicación concreta para aplicar cambios en sus clases Java (WEB-INF/classes) o librerías (WEB-INF/lib) sin reiniciar todo el servidor Tomcat.
 * Retirada (Undeploy): Detiene la aplicación y elimina por completo su directorio y archivo .war del directorio webapps.Diagnóstico y estado (Server Status / sesiones): Muestra el número de sesiones activas por aplicación, permite expirar sesiones inactivas para liberar memoria y ofrece métricas de la máquina virtual Java (JVM) y los hilos de conexión.
+
+# **3. Ficha descriptiva: Tomcat Virtual Host Manager**
+| Campo | Descripción |
+| :--- | :--- |
+| **Nombre oficial** | Tomcat Virtual Host Manager |
+| **URL de acceso** | `http://localhost:8080/host-manager/html` (interfaz web) / `/host-manager/text` (scripts) |
+| **Ubicación en disco** | `<CATALINA_BASE>/webapps/host-manager` |
+| **Roles necesarios** | `admin-gui` (interfaz web), `admin-script` (automatización) |
+| **Ámbito de gestión** | Gestión de dominios y alojamientos virtuales (*Virtual Hosts*) a nivel de motor (`Engine`) |
+| **Persistencia** | Temporal en memoria (desaparece al reiniciar salvo que se guarde/declare en `conf/server.xml`) |
+
+## Funciones principales
+* Creación de hosts virtuales (Add Virtual Host): Permite alojar múltiples sitios web con distintos nombres de dominio (por ejemplo, app1.empresa.local y app2.empresa.local) sobre una misma instancia y puerto de Tomcat. Al dar de alta un host se configuran sus parámetros clave:
+  * Name: Nombre de dominio completamente cualificado (FQDN) al que responderá el host.
+  * App base: Directorio base en el servidor donde se almacenarán las aplicaciones propias de ese host virtual.
+  * AutoDeploy / DeployOnStartup: Opciones para activar el despliegue automático al iniciar Tomcat o al copiar nuevos archivos en su appBase.
+  * UnpackWARs: Indica si Tomcat debe descomprimir automáticamente los paquetes .war en carpetas.
+* Arranque y parada de hosts: Habilita o deshabilita el servicio completo de un host virtual específico sin afectar al resto de dominios alojados en el servidor.
+* Eliminación de hosts (Remove): Da de baja un host virtual activo de la memoria del servidor.
+* Persistencia de configuración: Los hosts virtuales creados desde esta interfaz web se cargan dinámicamente en memoria, pero desaparecen al reiniciar Tomcat. Para hacerlos permanentes, la herramienta permite guardar la configuración o requiere declararlos mediante etiquetas <Host> dentro del archivo conf/server.xml (además de registrar los dominios en el servidor DNS o archivo hosts del sistema operativo).
+
+# **4. Comparativa rápida entre ambas herramientas**
+| Criterio | Web Application Manager | Virtual Host Manager |
+| :--- | :--- | :--- |
+| **Nivel de actuación** | Aplicación web (contexto) | Servidor / Dominio (host virtual) |
+| **Rol gráfico principal** | `manager-gui` | `admin-gui` |
+| **Operación habitual** | Subir archivos `.war` y recargar código | Crear nuevos dominios en una misma instancia |
+| **Persistencia de cambios** | Permanente en disco (`webapps`) | Temporal en memoria (salvo ed
