@@ -44,6 +44,9 @@ Antes de modificar la configuración, guardaremos una copia de seguridad del arc
 Ejecutaremos el mismo comando del apartado 1 bajos las mismas condiciones para que la comparación sea válida.
 Los resultados que obtendremos serán los siguientes:
 <img width="961" height="554" alt="imagen" src="https://github.com/user-attachments/assets/01a3fb6d-78e4-430c-8b60-951e1d979555" />
+<img width="767" height="416" alt="imagen" src="https://github.com/user-attachments/assets/7d693406-369f-4c60-97df-f15dd2f75baf" />
+
+
 
 
 
