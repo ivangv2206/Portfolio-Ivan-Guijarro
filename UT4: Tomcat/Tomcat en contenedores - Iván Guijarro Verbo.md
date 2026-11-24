@@ -3,6 +3,9 @@
 ```
 docker pull tomcat:latest
 ```
+<img width="983" height="283" alt="imagen" src="https://github.com/user-attachments/assets/76164694-398c-43e9-b319-3d30b3b4f02a" />
+<img width="1294" height="256" alt="imagen" src="https://github.com/user-attachments/assets/8f861717-3c2c-4789-91d4-f57daee34d40" />
+
 2. Prepararemos la carpeta local con nuestra aplicación web para montarla en el contenedor
 ```
 mkdir -p ~/tomcat-webapps/hola-mundo
