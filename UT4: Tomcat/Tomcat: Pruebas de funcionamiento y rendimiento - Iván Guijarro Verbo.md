@@ -47,8 +47,28 @@ Los resultados que obtendremos serán los siguientes:
 <img width="767" height="416" alt="imagen" src="https://github.com/user-attachments/assets/7d693406-369f-4c60-97df-f15dd2f75baf" />
 <img width="712" height="227" alt="imagen" src="https://github.com/user-attachments/assets/710dd76f-f2a0-45ef-985c-c7fff60a73f6" />
 
+## 3.1. Tabla Comparativa de Resultados (Antes vs. Después)
 
+| Métrica de rendimiento | Antes (Defecto) | Después (Optimizado) | Variación |
+| :--- | :---: | :---: | :---: |
+| **Peticiones completadas (`Complete requests`)** | `3000` | `3000` | `0 %` |
+| **Peticiones fallidas (`Failed requests`)** | `0` | `0` | `0 %` |
+| **Tiempo total de la prueba (`Time taken`)** | `2.546 s` | `3.664 s` | `+43,9 %` |
+| **Peticiones por segundo (`Requests/sec`)** | `1178.41 #/s` | `818.86 #/s` | `-30,5 %` |
+| **Tiempo medio por petición (`Time/request`)** | `212.149 ms` | `305.302 ms` | `+43,9 %` |
+| **Tiempo medio concurrente (`across all`)** | `0.849 ms` | `1.221 ms` | `+43,8 %` |
+| **Tiempo medio de conexión (`Connect`)** | `14 ms` (máx. `1063 ms`) | `1 ms` (máx. `21 ms`) | `-92,9 %` |
+| **Percentil 80 % de respuesta** | `265 ms` | `165 ms` | `-37,7 %` |
+| **Percentil 95 % de respuesta** | `1098 ms` | `2026 ms` | `+84,5 %` |
+| **Percentil 99 % de respuesta** | `2021 ms` | `2998 ms` | `+48,3 %` |
+| **Tasa de transferencia (`Transfer rate`)** | `515.56 KB/s` | `358.25 KB/s` | `-30,5 %` |
 
+---
 
+# **4. Conclusiones**
+
+* **Aceleración en el establecimiento de conexiones:** Aumentar `minSpareThreads` a `50` y `acceptCount` a `200` eliminó casi por completo la latencia inicial de conexión (`Connect`), pasando de `14 ms` de media (con picos de `1063 ms`) a `1 ms` (máximo `21 ms`). Gracias a ello, hasta el percentil 80 % de las peticiones redujo su tiempo de respuesta de `265 ms` a `165 ms`.
+* **Contención de CPU en entorno virtualizado:** Aunque la aceptación de conexiones fue mucho más rápida, el rendimiento global (`Requests/sec`) descendió de `1178.41 #/s` a `818.86 #/s` y aumentó la latencia en los percentiles altos (`95 %` y `99 %`). Esto ocurre porque la prueba se ejecutó en una máquina virtual (`VirtualBox`) donde Tomcat (con `400` hilos) y ApacheBench (`250` clientes concurrentes) compiten por los mismos núcleos virtuales de CPU, generando sobrecarga por cambios de contexto.
+* **Comportamiento de la compresión GZIP:** El volumen total de datos transferidos se mantuvo en `1344000 bytes` (`603000 bytes` de HTML) en ambas pruebas, ya que la página `/hola-mundo/` ocupa `201 bytes` y no supera el umbral mínimo configurado en `compressionMinSize="1024"`.
 
 
