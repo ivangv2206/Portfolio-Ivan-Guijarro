@@ -14,7 +14,29 @@ ab -n 3000 -c 250 -k http://localhost:8080/hola-mundo/
 <img width="902" height="422" alt="imagen" src="https://github.com/user-attachments/assets/dfefe222-1b20-46ab-9500-43ee0ed3169e" />
 <img width="720" height="232" alt="imagen" src="https://github.com/user-attachments/assets/279124e9-50d4-4e2d-8e0d-0b3845c97541" />
 
-
-
-
+# **2. Ajustes de rendimiento en conf/server.xml**
+Antes de modificar la configuración, guardaremos una copia de seguridad del archivo original con el comando: ```cp conf/server.xml conf/server.xml.bak```
+1. Abre el archivo conf/server.xml en el directorio de Tomcat y localiza el conector HTTP principal (<Connector ... port="8080" protocol="HTTP/1.1"/>).
+2. Sustituiremos o amplía sus atributos para aumentar la capacidad de hilos, ampliar la cola de espera y reducir el tiempo de bloqueo de conexiones inactivas:
+```
+<Connector port="8080"
+           protocol="org.apache.coyote.http11.Http11NioProtocol"
+           connectionTimeout="10000"
+           maxThreads="400"
+           minSpareThreads="50"
+           acceptCount="200"
+           maxConnections="10000"
+           compression="on"
+           compressionMinSize="1024"
+           compressibleMimeType="text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json"
+           redirectPort="8443" />
+```
+## Qué hace cada parámetro ajustado
+* maxThreads="400" (defecto: 200): Duplica el número máximo de hilos simultáneos capaces de procesar peticiones HTTP concurrentes.
+* minSpareThreads="50" (defecto: 10): Mantiene 50 hilos siempre activos en reserva para absorber picos repentinos de tráfico sin latencia de creación.
+* acceptCount="200" (defecto: 100): Amplía la cola del sistema operativo para peticiones entrantes cuando los 400 hilos están ocupados, evitando errores de conexión rechazada (Connection reset).
+* maxConnections="10000" (defecto: 8192 en NIO): Aumenta el límite de conexiones TCP simultáneas abiertas en el conector no bloqueante.
+* connectionTimeout="10000" (defecto: 20000): Reduce de 20 a 10 segundos el tiempo de espera antes de cerrar conexiones inactivas, liberando recursos antes.
+* compression="on": Activa la compresión GZIP en respuestas de texto/HTML/JSON mayores de 1 KB, reduciendo el ancho de banda y el tiempo de transferencia.
+3. Reiniciaremos Tomcat
 
