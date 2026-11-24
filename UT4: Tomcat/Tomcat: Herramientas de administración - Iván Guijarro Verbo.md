@@ -10,7 +10,7 @@ Por seguridad, Apache Tomcat bloquea el acceso a estas herramientas hasta que de
      <img width="1283" height="596" alt="imagen" src="https://github.com/user-attachments/assets/6ba13d7a-8e93-415f-b891-b32ec35a77fb" />
 
    * __Host Manager:__ http://localhost:8080/host-manager/html
-     
+     <img width="1298" height="579" alt="imagen" src="https://github.com/user-attachments/assets/d6f9e525-ae15-493e-a93e-bc5fe0b8603f" />
 
 #**2. Ficha descriptiva: Tomcat Web Application Manager**
 
