@@ -21,3 +21,10 @@ Por seguridad, Apache Tomcat bloquea el acceso a estas herramientas hasta que de
 | **Roles necesarios** | `manager-gui` (web), `manager-script` (automatización), `manager-jmx` (monitorización), `manager-status` (solo lectura) |
 | **Ámbito de gestión** | Ciclo de vida de aplicaciones web individuales dentro de un host |
 | **Persistencia** | Permanente en disco (directorio `webapps`) |
+
+## Funciones principales
+* Despliegue (Deploy): Instala nuevas aplicaciones web en caliente sin detener el servidor. Permite subir directamente un paquete WAR desde el equipo local o indicar una ruta del servidor (Context Path y ubicación del directorio o archivo).
+* Arranque (Start): Pone en marcha una aplicación previamente detenida para que vuelva a responder peticiones HTTP.
+* Parada (Stop): Detiene una aplicación en ejecución sin eliminar sus archivos del servidor. Útil para tareas de mantenimiento mientras se devuelve un error 404 controlado a los usuarios.
+* Recarga (Reload): Reinicia exclusivamente el contexto de una aplicación concreta para aplicar cambios en sus clases Java (WEB-INF/classes) o librerías (WEB-INF/lib) sin reiniciar todo el servidor Tomcat.
+* Retirada (Undeploy): Detiene la aplicación y elimina por completo su directorio y archivo .war del directorio webapps.Diagnóstico y estado (Server Status / sesiones): Muestra el número de sesiones activas por aplicación, permite expirar sesiones inactivas para liberar memoria y ofrece métricas de la máquina virtual Java (JVM) y los hilos de conexión.
